@@ -3,8 +3,7 @@
 
   <div class="row">
     <div class="col-3">
-      @for (author of authors; track author) {
-<div class="book-card">
+      <div *ngFor="let author of authors" class="book-card">
         <div class="card p-2 mb-2" style="width: 12rem; height: 23rem">
           <a
             class="card-block text-decoration-none"
@@ -24,12 +23,9 @@
           </a>
         </div>
       </div>
-}
     </div>
-    @if (selected) {
-<div class="col-9">
+    <div class="col-9" *ngIf="selected">
       <app-author-detail [authorDetail]="selectedAuthor"></app-author-detail>
     </div>
-}
   </div>
 </div>
