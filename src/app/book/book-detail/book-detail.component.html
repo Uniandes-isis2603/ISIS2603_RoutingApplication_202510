@@ -13,9 +13,11 @@
     <div class="col">
       <dl>
         <dt>Authors</dt>
-        <dd *ngFor="let author of bookDetail.authors" class="caption">
+        @for (author of bookDetail.authors; track author) {
+<dd class="caption">
         {{ author.name }}
         </dd>
+}
         <dt>ISBN</dt>
         <dd>{{ bookDetail.isbn }}</dd>
         <hr />
